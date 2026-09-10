@@ -114,6 +114,14 @@ export const ConfigDrawer: React.FC<ConfigDrawerProps> = ({ isOpen, onClose }) =
               <span className="font-mono text-slate-200">Content-Type: application/json</span>
             </div>
             <div className="flex items-center justify-between">
+              <span className="text-slate-400 font-medium">Header Autorizzazione:</span>
+              <span className="font-mono text-emerald-300 text-[11px]">Authorization: Bearer &lt;ADMIN_API_KEY&gt;</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-slate-400 font-medium">Header Api-Key:</span>
+              <span className="font-mono text-emerald-300 text-[11px]">x-api-key: &lt;ADMIN_API_KEY&gt;</span>
+            </div>
+            <div className="flex items-center justify-between">
               <span className="text-slate-400 font-medium">URL Completo:</span>
               <span className="font-mono text-emerald-300 text-[11px]">{getBackendEndpointUrl()}</span>
             </div>

@@ -28,6 +28,51 @@ export const getBackendEndpointUrl = (): string => {
   return `${base}${path}`;
 };
 
+// Recupero della chiave API amministratore da localStorage o da variabili di ambiente (VITE_ADMIN_API_KEY o ADMIN_API_KEY)
+export const getAdminApiKey = (): string => {
+  if (typeof window !== 'undefined') {
+    const local = localStorage.getItem('admin_api_key');
+    if (local && local.trim()) return local.trim();
+  }
+  const viteKey = (import.meta.env.VITE_ADMIN_API_KEY as string | undefined)?.trim();
+  if (viteKey) return viteKey;
+
+  const rawEnvKey = ((import.meta.env as Record<string, string | undefined>)?.ADMIN_API_KEY as string | undefined)?.trim();
+  if (rawEnvKey) return rawEnvKey;
+
+  return '';
+};
+
+export const setAdminApiKey = (key: string) => {
+  if (typeof window !== 'undefined') {
+    if (key.trim()) {
+      localStorage.setItem('admin_api_key', key.trim());
+    } else {
+      localStorage.removeItem('admin_api_key');
+    }
+  }
+};
+
+/**
+ * Genera gli header HTTP per la chiamata backend con Content-Type e
+ * supporto agli Header di Autorizzazione:
+ * - Authorization: Bearer <ADMIN_API_KEY>
+ * - x-api-key: <ADMIN_API_KEY>
+ */
+export const buildRequestHeaders = (): Record<string, string> => {
+  const headers: Record<string, string> = {
+    'Content-Type': 'application/json',
+  };
+
+  const adminApiKey = getAdminApiKey();
+  if (adminApiKey) {
+    headers['Authorization'] = `Bearer ${adminApiKey}`;
+    headers['x-api-key'] = adminApiKey;
+  }
+
+  return headers;
+};
+
 // Retrocompatibilità per eventuali riferimenti a chiavi pubbliche EmailJS
 export const getStoredPublicKey = (): string => '';
 export const setStoredPublicKey = (_key: string) => {};
@@ -37,7 +82,8 @@ export const setStoredPublicKey = (_key: string) => {};
  * Base URI: https://corsiarbitri-fip-be.vercel.app
  * Endpoint: /api/sendCourseInfoRequest
  * Metodo HTTP: POST
- * Header: Content-Type: application/json
+ * Header Obbligatorio: Content-Type: application/json
+ * Header di Autorizzazione: Authorization: Bearer <ADMIN_API_KEY>, x-api-key: <ADMIN_API_KEY>
  */
 export async function sendRegistrationEmail(
   formData: RegistrationFormData
@@ -67,12 +113,12 @@ export async function sendRegistrationEmail(
   let endpointPath = (import.meta.env.VITE_BACKEND_API_PATH as string | undefined)?.trim() || DEFAULT_BACKEND_ENDPOINT;
   let endpointUrl = `${baseUri}${endpointPath.startsWith('/') ? endpointPath : `/${endpointPath}`}`;
 
+  const headers = buildRequestHeaders();
+
   try {
     let response = await fetch(endpointUrl, {
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      headers,
       body: JSON.stringify(payload),
     });
 
@@ -82,9 +128,7 @@ export async function sendRegistrationEmail(
       try {
         const fallbackResponse = await fetch(fallbackUrl, {
           method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers,
           body: JSON.stringify(payload),
         });
         if (fallbackResponse.status !== 404) {
