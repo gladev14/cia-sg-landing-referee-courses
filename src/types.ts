@@ -11,24 +11,25 @@ export interface RegistrationFormData {
   notes?: string;
 }
 
-export interface EmailJsParams {
+export interface CourseInfoRequestPayload {
   region: string;
   name: string;
   surname: string;
   city: string;
   mail: string;
   telephone: string;
-  // Parametri di configurazione routing
-  recipient: string; // Regione destinataria (email comitato CIA regionale)
-  coordinator: string; // Mail dell'amministratore centrale
-  // Dynamic recipient fields for routing in EmailJS templates
-  to_email?: string;
-  admin_email?: string;
-  cc_email?: string;
-  regional_email?: string;
-  regional_committee?: string;
-  submitted_at?: string;
+  recipient: string;
+  coordinator: string;
+  to_email: string;
+  admin_email: string;
+  cc_email: string;
+  regional_email: string;
+  regional_committee: string;
+  submitted_at: string;
 }
+
+// Alias for backward compatibility
+export type EmailJsParams = CourseInfoRequestPayload;
 
 export interface Province {
   code: string; // e.g. "MI", "RM", "NA"
@@ -52,6 +53,8 @@ export interface SubmissionResult {
     recipientRegional: string;
     recipientAdmin: string;
     recipientUserCc: string;
-    paramsSent: EmailJsParams;
+    paramsSent: CourseInfoRequestPayload;
+    status?: number;
+    endpoint?: string;
   };
 }

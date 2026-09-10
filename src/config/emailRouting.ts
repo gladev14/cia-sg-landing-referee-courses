@@ -1,39 +1,51 @@
 /**
- * Configurazione per il Routing Email e Integrazione EmailJS
+ * Configurazione per il Servizio Backend Custom e Routing Email
  * 
- * I parametri configurati e passati al template EmailJS sono:
- * - region: Regione selezionata dal richiedente
- * - name: Nome del richiedente
- * - surname: Cognome del richiedente
- * - city: Provincia o città di riferimento
- * - mail: Email del richiedente
- * - telephone: Recapito telefonico
- * - recipient: Regione destinataria (email di destinazione del comitato CIA regionale)
- * - coordinator: Mail dell'amministratore / coordinatore centrale
+ * Base URI: https://corsiarbitri-fip-be.vercel.app
+ * Metodo HTTP: POST
+ * Path Endpoint: /api/sendCourseInfoRequest
+ * Header: Content-Type: application/json
  * 
- * Snippet ufficiale di invio:
- * emailjs.send("service_fox1908", "template_5hy8zkd", templateParams, publicKey);
+ * Payload JSON:
+ * {
+ *   "region": "Lombardia",
+ *   "name": "Mario",
+ *   "surname": "Rossi",
+ *   "city": "Milano",
+ *   "mail": "mario.rossi@example.it",
+ *   "telephone": "+39 340 1234567",
+ *   "recipient": "lombardia@cia.example.it",
+ *   "coordinator": "coordinamento.corsi@cia.example.it",
+ *   "to_email": "lombardia@cia.example.it",
+ *   "admin_email": "coordinamento.corsi@cia.example.it",
+ *   "cc_email": "mario.rossi@example.it",
+ *   "regional_email": "lombardia@cia.example.it",
+ *   "regional_committee": "CIA Lombardia",
+ *   "submitted_at": "10/09/2026, 12:15:30"
+ * }
  */
 
 import { ITALIAN_REGIONS } from './regions';
 
-export interface EmailRoutingConfig {
-  serviceId: string;
-  templateId: string;
+export interface BackendApiConfig {
+  baseUrl: string;
+  endpoint: string;
+  serviceId?: string;
+  templateId?: string;
   centralAdminEmail: string; // coordinator (mail dell'amministratore)
   regionalEmails: Record<string, string>; // recipient (regione destinataria)
 }
 
-export const EMAILJS_ROUTING_CONFIG: EmailRoutingConfig = {
-  // Service ID e Template ID forniti nel prompt utente
+export const BACKEND_API_CONFIG: BackendApiConfig = {
+  baseUrl: 'https://corsiarbitri-fip-be.vercel.app',
+  endpoint: '/api/sendCourseInfoRequest',
   serviceId: 'service_fox1908',
   templateId: 'template_5hy8zkd',
 
-  // Email dell'amministratore centrale a cui inviare la notifica di nuova adesione
+  // Email dell'amministratore centrale (coordinator)
   centralAdminEmail: '',
 
-  // Routing dei destinatari per ciascuna delle 20 Regioni italiane
-  // Modificabili in base alle sezioni/comitati regionali effettivi
+  // Routing dei destinatari per ciascuna delle 20 Regioni italiane (recipient)
   regionalEmails: {
     'Abruzzo': '',
     'Basilicata': '',
@@ -57,6 +69,9 @@ export const EMAILJS_ROUTING_CONFIG: EmailRoutingConfig = {
     'Veneto':  '',
   },
 };
+
+// Retrocompatibilità
+export const EMAILJS_ROUTING_CONFIG = BACKEND_API_CONFIG;
 
 /**
  * Risolve gli indirizzi email di destinazione per una determinata regione

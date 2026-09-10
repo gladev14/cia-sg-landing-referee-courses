@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { X, Sliders, Check, Copy, Key, Server, Mail, ExternalLink, ShieldCheck } from 'lucide-react';
-import { EMAILJS_ROUTING_CONFIG } from '../config/emailRouting';
-import { getStoredPublicKey, setStoredPublicKey } from '../services/emailService';
+import { X, Sliders, Check, Copy, Server, Mail, ShieldCheck } from 'lucide-react';
+import { BACKEND_API_CONFIG } from '../config/emailRouting';
+import { getBackendBaseUri, setBackendBaseUri, getBackendEndpointUrl } from '../services/emailService';
 
 interface ConfigDrawerProps {
   isOpen: boolean;
@@ -9,50 +9,50 @@ interface ConfigDrawerProps {
 }
 
 export const ConfigDrawer: React.FC<ConfigDrawerProps> = ({ isOpen, onClose }) => {
-  const [publicKey, setPublicKey] = useState('');
+  const [baseUri, setBaseUri] = useState('');
   const [savedSuccess, setSavedSuccess] = useState(false);
   const [copiedSnippet, setCopiedSnippet] = useState(false);
   const [selectedRegionFilter, setSelectedRegionFilter] = useState('');
 
   useEffect(() => {
     if (isOpen) {
-      setPublicKey(getStoredPublicKey());
+      setBaseUri(getBackendBaseUri());
     }
   }, [isOpen]);
 
   if (!isOpen) return null;
 
-  const handleSaveKey = (e: React.FormEvent) => {
+  const handleSaveUri = (e: React.FormEvent) => {
     e.preventDefault();
-    setStoredPublicKey(publicKey);
+    setBackendBaseUri(baseUri);
     setSavedSuccess(true);
     setTimeout(() => setSavedSuccess(false), 2500);
   };
 
-  const codeSnippet = `// Snippet di invio con routing dinamico EmailJS
-emailjs.send(
-  "${EMAILJS_ROUTING_CONFIG.serviceId}",
-  "${EMAILJS_ROUTING_CONFIG.templateId}",
-  {
-    region: formData.region,
-    name: formData.name,
-    surname: formData.surname,
-    city: formData.city,
-    mail: formData.mail,
-    telephone: formData.telephone,
-    recipient: recipientRegionalEmail, // Regione destinataria
-    coordinator: adminEmail // Mail dell'amministratore
-  },
-  publicKey
-);`;
+  const payloadExample = `{
+  "region": "Lombardia",
+  "name": "Mario",
+  "surname": "Rossi",
+  "city": "Milano",
+  "mail": "mario.rossi@example.it",
+  "telephone": "+39 340 1234567",
+  "recipient": "alessandro589@hotmail.com",
+  "coordinator": "coordinamento.corsi@cia.example.it",
+  "to_email": "alessandro589@hotmail.com",
+  "admin_email": "coordinamento.corsi@cia.example.it",
+  "cc_email": "mario.rossi@example.it",
+  "regional_email": "alessandro589@hotmail.com",
+  "regional_committee": "CIA Lombardia",
+  "submitted_at": "10/09/2026, 12:15:30"
+}`;
 
   const copyCode = () => {
-    navigator.clipboard.writeText(codeSnippet);
+    navigator.clipboard.writeText(payloadExample);
     setCopiedSnippet(true);
     setTimeout(() => setCopiedSnippet(false), 2000);
   };
 
-  const regionsList = Object.entries(EMAILJS_ROUTING_CONFIG.regionalEmails).filter(
+  const regionsList = Object.entries(BACKEND_API_CONFIG.regionalEmails).filter(
     ([reg]) => !selectedRegionFilter || reg.toLowerCase().includes(selectedRegionFilter.toLowerCase())
   );
 
@@ -66,8 +66,8 @@ emailjs.send(
               <Sliders className="h-5 w-5" />
             </div>
             <div>
-              <h3 className="text-lg font-bold text-white">Configurazione EmailJS & Routing Regioni</h3>
-              <p className="text-xs text-slate-400">Verifica parametri template e destinatari per Vercel</p>
+              <h3 className="text-lg font-bold text-white">Configurazione Backend Custom & Routing</h3>
+              <p className="text-xs text-slate-400">Endpoint: POST /api/sendCourseInfoRequest</p>
             </div>
           </div>
           <button
@@ -79,12 +79,12 @@ emailjs.send(
           </button>
         </div>
 
-        {/* Snippet and Service/Template Card */}
+        {/* Endpoint Card */}
         <div className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-xs font-bold uppercase tracking-wider text-emerald-400 flex items-center gap-1.5">
               <Server className="h-4 w-4" />
-              ID Servizio & Template
+              Endpoint Servizio Backend
             </span>
             <button
               onClick={copyCode}
@@ -98,86 +98,69 @@ emailjs.send(
               ) : (
                 <>
                   <Copy className="h-3 w-3" />
-                  <span>Copia Snippet</span>
+                  <span>Copia Payload JSON</span>
                 </>
               )}
             </button>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 text-xs">
-            <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
-              <span className="text-slate-400 block text-[10px]">SERVICE_ID:</span>
-              <span className="font-mono text-emerald-400 font-bold">{EMAILJS_ROUTING_CONFIG.serviceId}</span>
+          <div className="p-3 rounded-lg bg-slate-900 border border-slate-800 space-y-1 text-xs">
+            <div className="flex items-center justify-between">
+              <span className="text-slate-400 font-medium">Metodo HTTP:</span>
+              <span className="font-mono text-emerald-400 font-bold">POST</span>
             </div>
-            <div className="p-2.5 rounded-lg bg-slate-900 border border-slate-800">
-              <span className="text-slate-400 block text-[10px]">TEMPLATE_ID:</span>
-              <span className="font-mono text-emerald-400 font-bold">{EMAILJS_ROUTING_CONFIG.templateId}</span>
+            <div className="flex items-center justify-between">
+              <span className="text-slate-400 font-medium">Header Obbligatorio:</span>
+              <span className="font-mono text-slate-200">Content-Type: application/json</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-slate-400 font-medium">URL Completo:</span>
+              <span className="font-mono text-emerald-300 text-[11px]">{getBackendEndpointUrl()}</span>
             </div>
           </div>
 
           <div>
             <span className="text-[11px] font-semibold text-slate-400 block mb-1.5">
-              Parametri attesi da EmailJS (6 chiavi richieste):
+              Payload JSON inviato al backend:
             </span>
-            <div className="flex flex-wrap gap-1.5 font-mono text-xs">
-              {['region', 'name', 'surname', 'city', 'mail', 'telephone'].map((key) => (
-                <span
-                  key={key}
-                  className="rounded-md bg-slate-900 border border-emerald-500/30 px-2 py-0.5 text-emerald-300 font-semibold"
-                >
-                  {key}
-                </span>
-              ))}
-            </div>
+            <pre className="rounded-xl bg-slate-900 border border-slate-800 p-3 text-[11px] text-slate-300 font-mono overflow-x-auto max-h-40">
+              {payloadExample}
+            </pre>
           </div>
         </div>
 
-        {/* Public Key Config Form */}
-        <form onSubmit={handleSaveKey} className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 space-y-3">
-          <div className="flex items-center justify-between">
-            <label htmlFor="public-key-input" className="text-xs font-bold uppercase tracking-wider text-white flex items-center gap-1.5">
-              <Key className="h-4 w-4 text-emerald-400" />
-              EmailJS Public Key (Opzionale per test locale / live)
-            </label>
-            <a
-              href="https://dashboard.emailjs.com/admin/account"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] text-emerald-400 hover:underline flex items-center gap-1"
-            >
-              Trova in EmailJS <ExternalLink className="h-3 w-3" />
-            </a>
-          </div>
+        {/* Base URI Config Form */}
+        <form onSubmit={handleSaveUri} className="rounded-2xl border border-slate-800 bg-slate-950/80 p-5 space-y-3">
+          <label htmlFor="base-uri-input" className="text-xs font-bold uppercase tracking-wider text-white flex items-center gap-1.5">
+            <Server className="h-4 w-4 text-emerald-400" />
+            Base URI Servizio Backend
+          </label>
 
           <p className="text-xs text-slate-400">
-            Per abilitare l'invio reale da Vercel puoi configurare la variabile d'ambiente{' '}
-            <code className="bg-slate-900 text-emerald-300 px-1 py-0.5 rounded font-mono">
-              VITE_EMAILJS_PUBLIC_KEY
-            </code>{' '}
-            nelle impostazioni del progetto su Vercel. In alternativa puoi incollarla qui per testarla subito nel browser:
+            Valore predefinito: <code className="bg-slate-900 text-emerald-300 px-1 py-0.5 rounded font-mono">https://corsiarbitri-fip-be.vercel.app</code>
           </p>
 
           <div className="flex gap-2">
             <input
-              id="public-key-input"
+              id="base-uri-input"
               type="text"
-              value={publicKey}
-              onChange={(e) => setPublicKey(e.target.value)}
-              placeholder="es. user_abc123xyz o public_key..."
+              value={baseUri}
+              onChange={(e) => setBaseUri(e.target.value)}
+              placeholder="https://corsiarbitri-fip-be.vercel.app"
               className="flex-1 rounded-xl border border-slate-800 bg-slate-900 px-3.5 py-2 text-sm text-white font-mono placeholder-slate-500 focus:border-emerald-500 focus:outline-none"
             />
             <button
               type="submit"
               className="rounded-xl bg-emerald-500 px-4 py-2 text-xs font-bold text-slate-950 hover:bg-emerald-400 transition-colors cursor-pointer"
             >
-              Salva Chiave
+              Salva URI
             </button>
           </div>
 
           {savedSuccess && (
             <p className="text-xs text-emerald-400 flex items-center gap-1">
               <ShieldCheck className="h-3.5 w-3.5" />
-              Chiave salvata! Ora le richieste verranno inviate tramite il tuo account EmailJS.
+              Base URI aggiornato con successo!
             </p>
           )}
         </form>
@@ -188,11 +171,11 @@ emailjs.send(
             <div>
               <span className="text-xs font-bold uppercase tracking-wider text-white flex items-center gap-1.5">
                 <Mail className="h-4 w-4 text-emerald-400" />
-                Tabella Routing Email (Config File)
+                Tabella Routing Destinatari Regionali (recipient)
               </span>
               <p className="text-[11px] text-slate-400">
-                Amministratore Centrale:{' '}
-                <strong className="text-white font-mono">{EMAILJS_ROUTING_CONFIG.centralAdminEmail}</strong>
+                Coordinatore centrale:{' '}
+                <strong className="text-white font-mono">{BACKEND_API_CONFIG.centralAdminEmail || 'Non impostato'}</strong>
               </p>
             </div>
 
@@ -209,7 +192,7 @@ emailjs.send(
             {regionsList.map(([region, email]) => (
               <div key={region} className="px-3.5 py-2 flex items-center justify-between text-xs">
                 <span className="font-semibold text-slate-200">{region}</span>
-                <span className="font-mono text-slate-400 text-[11px]">{email}</span>
+                <span className="font-mono text-slate-400 text-[11px]">{email || '-'}</span>
               </div>
             ))}
           </div>

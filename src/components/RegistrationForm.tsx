@@ -238,10 +238,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                   <span className="font-mono text-emerald-400">{formData.mail}</span>
                 </div>
                 <div className="pt-2 border-t border-slate-800/80 text-[11px] text-slate-400">
-                  Parametri passati a EmailJS:{' '}
-                  <code className="text-slate-300 bg-slate-900 px-1 py-0.5 rounded">
-                    region, name, surname, city, mail, telephone, recipient, coordinator
-                  </code>
+                  Endpoint backend: <code className="text-emerald-400 bg-slate-900 px-1 py-0.5 rounded font-mono">POST /api/sendCourseInfoRequest</code>
                 </div>
               </div>
 
