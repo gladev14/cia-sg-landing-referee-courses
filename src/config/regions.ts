@@ -1,0 +1,307 @@
+import { RegionConfig } from '../types';
+
+export const ITALIAN_REGIONS: RegionConfig[] = [
+  {
+    id: 'abruzzo',
+    name: 'Abruzzo',
+    contactEmail: 'abruzzo@corsiarbitri.it',
+    committeeName: 'CIA Abruzzo',
+    phone: '+39 0862 419200',
+    provinces: [
+      { code: 'AQ', name: "L'Aquila" },
+      { code: 'CH', name: 'Chieti' },
+      { code: 'PE', name: 'Pescara' },
+      { code: 'TE', name: 'Teramo' },
+    ],
+  },
+  {
+    id: 'basilicata',
+    name: 'Basilicata',
+    contactEmail: 'basilicata@corsiarbitri.it',
+    committeeName: 'CIA Basilicata',
+    phone: '+39 0971 441233',
+    provinces: [
+      { code: 'MT', name: 'Matera' },
+      { code: 'PZ', name: 'Potenza' },
+    ],
+  },
+  {
+    id: 'calabria',
+    name: 'Calabria',
+    contactEmail: 'calabria@corsiarbitri.it',
+    committeeName: 'CIA Calabria',
+    phone: '+39 0961 745811',
+    provinces: [
+      { code: 'CS', name: 'Cosenza' },
+      { code: 'CZ', name: 'Catanzaro' },
+      { code: 'KR', name: 'Crotone' },
+      { code: 'RC', name: 'Reggio Calabria' },
+      { code: 'VV', name: 'Vibo Valentia' },
+    ],
+  },
+  {
+    id: 'campania',
+    name: 'Campania',
+    contactEmail: 'campania@corsiarbitri.it',
+    committeeName: 'CIA Campania',
+    phone: '+39 081 5567890',
+    provinces: [
+      { code: 'AV', name: 'Avellino' },
+      { code: 'BN', name: 'Benevento' },
+      { code: 'CE', name: 'Caserta' },
+      { code: 'NA', name: 'Napoli' },
+      { code: 'SA', name: 'Salerno' },
+    ],
+  },
+  {
+    id: 'emilia-romagna',
+    name: 'Emilia-Romagna',
+    contactEmail: 'emiliaromagna@corsiarbitri.it',
+    committeeName: 'CIA Emilia-Romagna',
+    phone: '+39 051 6334511',
+    provinces: [
+      { code: 'BO', name: 'Bologna' },
+      { code: 'FE', name: 'Ferrara' },
+      { code: 'FC', name: 'Forlì-Cesena' },
+      { code: 'MO', name: 'Modena' },
+      { code: 'PR', name: 'Parma' },
+      { code: 'PC', name: 'Piacenza' },
+      { code: 'RA', name: 'Ravenna' },
+      { code: 'RE', name: 'Reggio Emilia' },
+      { code: 'RN', name: 'Rimini' },
+    ],
+  },
+  {
+    id: 'friuli-venezia-giulia',
+    name: 'Friuli-Venezia Giulia',
+    contactEmail: 'friulivg@corsiarbitri.it',
+    committeeName: 'CIA Friuli-Venezia Giulia',
+    phone: '+39 0432 548900',
+    provinces: [
+      { code: 'GO', name: 'Gorizia' },
+      { code: 'PN', name: 'Pordenone' },
+      { code: 'TS', name: 'Trieste' },
+      { code: 'UD', name: 'Udine' },
+    ],
+  },
+  {
+    id: 'lazio',
+    name: 'Lazio',
+    contactEmail: 'lazio@corsiarbitri.it',
+    committeeName: 'CIA Lazio',
+    phone: '+39 06 87654321',
+    provinces: [
+      { code: 'FR', name: 'Frosinone' },
+      { code: 'LT', name: 'Latina' },
+      { code: 'RI', name: 'Rieti' },
+      { code: 'RM', name: 'Roma' },
+      { code: 'VT', name: 'Viterbo' },
+    ],
+  },
+  {
+    id: 'liguria',
+    name: 'Liguria',
+    contactEmail: 'liguria@corsiarbitri.it',
+    committeeName: 'CIA Liguria',
+    phone: '+39 010 3772211',
+    provinces: [
+      { code: 'GE', name: 'Genova' },
+      { code: 'IM', name: 'Imperia' },
+      { code: 'SP', name: 'La Spezia' },
+      { code: 'SV', name: 'Savona' },
+    ],
+  },
+  {
+    id: 'lombardia',
+    name: 'Lombardia',
+    contactEmail: 'lombardia@corsiarbitri.it',
+    committeeName: 'CIA Lombardia',
+    phone: '+39 02 76008123',
+    provinces: [
+      { code: 'BG', name: 'Bergamo' },
+      { code: 'BS', name: 'Brescia' },
+      { code: 'CO', name: 'Como' },
+      { code: 'CR', name: 'Cremona' },
+      { code: 'LC', name: 'Lecco' },
+      { code: 'LO', name: 'Lodi' },
+      { code: 'MN', name: 'Mantova' },
+      { code: 'MI', name: 'Milano' },
+      { code: 'MB', name: 'Monza e Brianza' },
+      { code: 'PV', name: 'Pavia' },
+      { code: 'SO', name: 'Sondrio' },
+      { code: 'VA', name: 'Varese' },
+    ],
+  },
+  {
+    id: 'marche',
+    name: 'Marche',
+    contactEmail: 'marche@corsiarbitri.it',
+    committeeName: 'CIA Marche',
+    phone: '+39 071 2801455',
+    provinces: [
+      { code: 'AN', name: 'Ancona' },
+      { code: 'AP', name: 'Ascoli Piceno' },
+      { code: 'FM', name: 'Fermo' },
+      { code: 'MC', name: 'Macerata' },
+      { code: 'PU', name: 'Pesaro e Urbino' },
+    ],
+  },
+  {
+    id: 'molise',
+    name: 'Molise',
+    contactEmail: 'molise@corsiarbitri.it',
+    committeeName: 'CIA Molise',
+    phone: '+39 0874 481220',
+    provinces: [
+      { code: 'CB', name: 'Campobasso' },
+      { code: 'IS', name: 'Isernia' },
+    ],
+  },
+  {
+    id: 'piemonte',
+    name: 'Piemonte',
+    contactEmail: 'piemonte@corsiarbitri.it',
+    committeeName: 'CIA Piemonte e V.d.A.',
+    phone: '+39 011 5621122',
+    provinces: [
+      { code: 'AL', name: 'Alessandria' },
+      { code: 'AT', name: 'Asti' },
+      { code: 'BI', name: 'Biella' },
+      { code: 'CN', name: 'Cuneo' },
+      { code: 'NO', name: 'Novara' },
+      { code: 'TO', name: 'Torino' },
+      { code: 'VB', name: 'Verbano-Cusio-Ossola' },
+      { code: 'VC', name: 'Vercelli' },
+    ],
+  },
+  {
+    id: 'puglia',
+    name: 'Puglia',
+    contactEmail: 'puglia@corsiarbitri.it',
+    committeeName: 'CIA Puglia',
+    phone: '+39 080 5348899',
+    provinces: [
+      { code: 'BA', name: 'Bari' },
+      { code: 'BT', name: 'Barletta-Andria-Trani' },
+      { code: 'BR', name: 'Brindisi' },
+      { code: 'FG', name: 'Foggia' },
+      { code: 'LE', name: 'Lecce' },
+      { code: 'TA', name: 'Taranto' },
+    ],
+  },
+  {
+    id: 'sardegna',
+    name: 'Sardegna',
+    contactEmail: 'sardegna@corsiarbitri.it',
+    committeeName: 'CIA Sardegna',
+    phone: '+39 070 498711',
+    provinces: [
+      { code: 'CA', name: 'Cagliari' },
+      { code: 'NU', name: 'Nuoro' },
+      { code: 'OR', name: 'Oristano' },
+      { code: 'SS', name: 'Sassari' },
+      { code: 'SU', name: 'Sud Sardegna' },
+    ],
+  },
+  {
+    id: 'sicilia',
+    name: 'Sicilia',
+    contactEmail: 'sicilia@corsiarbitri.it',
+    committeeName: 'CIA Sicilia',
+    phone: '+39 091 6889911',
+    provinces: [
+      { code: 'AG', name: 'Agrigento' },
+      { code: 'CL', name: 'Caltanissetta' },
+      { code: 'CT', name: 'Catania' },
+      { code: 'EN', name: 'Enna' },
+      { code: 'ME', name: 'Messina' },
+      { code: 'PA', name: 'Palermo' },
+      { code: 'RG', name: 'Ragusa' },
+      { code: 'SR', name: 'Siracusa' },
+      { code: 'TP', name: 'Trapani' },
+    ],
+  },
+  {
+    id: 'toscana',
+    name: 'Toscana',
+    contactEmail: 'toscana@corsiarbitri.it',
+    committeeName: 'CIA Toscana',
+    phone: '+39 055 369811',
+    provinces: [
+      { code: 'AR', name: 'Arezzo' },
+      { code: 'FI', name: 'Firenze' },
+      { code: 'GR', name: 'Grosseto' },
+      { code: 'LI', name: 'Livorno' },
+      { code: 'LU', name: 'Lucca' },
+      { code: 'MS', name: 'Massa-Carrara' },
+      { code: 'PI', name: 'Pisa' },
+      { code: 'PT', name: 'Pistoia' },
+      { code: 'PO', name: 'Prato' },
+      { code: 'SI', name: 'Siena' },
+    ],
+  },
+  {
+    id: 'trentino-alto-adige',
+    name: 'Trentino-Alto Adige',
+    contactEmail: 'trentinoaltoadige@corsiarbitri.it',
+    committeeName: 'CIA Trentino-Alto Adige',
+    phone: '+39 0461 982144',
+    provinces: [
+      { code: 'BZ', name: 'Bolzano' },
+      { code: 'TN', name: 'Trento' },
+    ],
+  },
+  {
+    id: 'umbria',
+    name: 'Umbria',
+    contactEmail: 'umbria@corsiarbitri.it',
+    committeeName: 'CIA Umbria',
+    phone: '+39 075 5001233',
+    provinces: [
+      { code: 'PG', name: 'Perugia' },
+      { code: 'TR', name: 'Terni' },
+    ],
+  },
+  {
+    id: 'valle-daosta',
+    name: "Valle d'Aosta",
+    contactEmail: 'valledaosta@corsiarbitri.it',
+    committeeName: "CIA Valle d'Aosta",
+    phone: '+39 0165 238910',
+    provinces: [
+      { code: 'AO', name: 'Aosta' },
+    ],
+  },
+  {
+    id: 'veneto',
+    name: 'Veneto',
+    contactEmail: 'veneto@corsiarbitri.it',
+    committeeName: 'CIA Veneto',
+    phone: '+39 041 5381122',
+    provinces: [
+      { code: 'BL', name: 'Belluno' },
+      { code: 'PD', name: 'Padova' },
+      { code: 'RO', name: 'Rovigo' },
+      { code: 'TV', name: 'Treviso' },
+      { code: 'VE', name: 'Venezia' },
+      { code: 'VR', name: 'Verona' },
+      { code: 'VI', name: 'Vicenza' },
+    ],
+  },
+];
+
+export function getRegionByName(regionName: string): RegionConfig | undefined {
+  if (!regionName) return undefined;
+  const normalized = regionName.trim().toLowerCase();
+  return ITALIAN_REGIONS.find(
+    (r) =>
+      r.name.toLowerCase() === normalized ||
+      r.id.toLowerCase() === normalized ||
+      r.id.replace(/-/g, ' ') === normalized
+  );
+}
+
+export function getProvincesForRegion(regionName: string) {
+  const reg = getRegionByName(regionName);
+  return reg ? reg.provinces : [];
+}
