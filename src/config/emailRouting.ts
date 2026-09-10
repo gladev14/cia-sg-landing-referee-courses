@@ -28,7 +28,7 @@ export const EMAILJS_ROUTING_CONFIG: EmailRoutingConfig = {
   templateId: 'template_5hy8zkd',
 
   // Email dell'amministratore centrale a cui inviare la notifica di nuova adesione
-  centralAdminEmail: 'amministrazione@corsiarbitri.it',
+  centralAdminEmail: '',
 
   // Routing dei destinatari per ciascuna delle 20 Regioni italiane
   // Modificabili in base alle sezioni/comitati regionali effettivi
