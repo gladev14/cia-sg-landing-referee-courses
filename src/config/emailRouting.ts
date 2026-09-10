@@ -1,13 +1,15 @@
 /**
  * Configurazione per il Routing Email e Integrazione EmailJS
  * 
- * I parametri attesi dal template EmailJS sono:
- * - region
- * - name
- * - surname
- * - city
- * - mail
- * - telephone
+ * I parametri configurati e passati al template EmailJS sono:
+ * - region: Regione selezionata dal richiedente
+ * - name: Nome del richiedente
+ * - surname: Cognome del richiedente
+ * - city: Provincia o città di riferimento
+ * - mail: Email del richiedente
+ * - telephone: Recapito telefonico
+ * - recipient: Regione destinataria (email di destinazione del comitato CIA regionale)
+ * - coordinator: Mail dell'amministratore / coordinatore centrale
  * 
  * Snippet ufficiale di invio:
  * emailjs.send("service_fox1908", "template_5hy8zkd", templateParams, publicKey);
@@ -18,8 +20,8 @@ import { ITALIAN_REGIONS } from './regions';
 export interface EmailRoutingConfig {
   serviceId: string;
   templateId: string;
-  centralAdminEmail: string;
-  regionalEmails: Record<string, string>;
+  centralAdminEmail: string; // coordinator (mail dell'amministratore)
+  regionalEmails: Record<string, string>; // recipient (regione destinataria)
 }
 
 export const EMAILJS_ROUTING_CONFIG: EmailRoutingConfig = {

@@ -41,6 +41,9 @@ export async function sendRegistrationEmail(
     city: formData.city.trim(),
     mail: formData.mail.trim().toLowerCase(),
     telephone: formData.telephone.trim(),
+    // Parametri di configurazione routing richiesti
+    recipient: regionalEmail, // Regione destinataria (email del comitato/sezione regionale CIA)
+    coordinator: adminEmail, // Mail dell'amministratore centrale
     // Parametri aggiuntivi utili per il routing dinamico configurato sul pannello EmailJS
     to_email: regionalEmail,
     admin_email: adminEmail,

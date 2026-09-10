@@ -18,6 +18,9 @@ export interface EmailJsParams {
   city: string;
   mail: string;
   telephone: string;
+  // Parametri di configurazione routing
+  recipient: string; // Regione destinataria (email comitato CIA regionale)
+  coordinator: string; // Mail dell'amministratore centrale
   // Dynamic recipient fields for routing in EmailJS templates
   to_email?: string;
   admin_email?: string;

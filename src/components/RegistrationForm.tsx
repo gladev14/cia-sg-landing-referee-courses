@@ -222,21 +222,25 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                   <span className="text-[11px] text-emerald-400 font-semibold">Notifica Inviata</span>
                 </div>
                 <div className="flex justify-between text-slate-400">
-                  <span>Destinatario CIA Regione ({formData.region}):</span>
-                  <span className="font-mono text-slate-200">{submissionResult.details?.recipientRegional}</span>
+                  <span>Regione Destinataria (recipient):</span>
+                  <span className="font-mono text-slate-200">
+                    {submissionResult.details?.recipientRegional || 'In attesa di configurazione'}
+                  </span>
                 </div>
                 <div className="flex justify-between text-slate-400">
-                  <span>Notifica Amministratore Centrale:</span>
-                  <span className="font-mono text-slate-200">{submissionResult.details?.recipientAdmin}</span>
+                  <span>Mail Amministratore (coordinator):</span>
+                  <span className="font-mono text-slate-200">
+                    {submissionResult.details?.recipientAdmin || 'In attesa di configurazione'}
+                  </span>
                 </div>
                 <div className="flex justify-between text-slate-400">
                   <span>In CC all'Utente Richiedente:</span>
                   <span className="font-mono text-emerald-400">{formData.mail}</span>
                 </div>
                 <div className="pt-2 border-t border-slate-800/80 text-[11px] text-slate-400">
-                  Parametri registrati:{' '}
+                  Parametri passati a EmailJS:{' '}
                   <code className="text-slate-300 bg-slate-900 px-1 py-0.5 rounded">
-                    region, name, surname, city, mail, telephone
+                    region, name, surname, city, mail, telephone, recipient, coordinator
                   </code>
                 </div>
               </div>

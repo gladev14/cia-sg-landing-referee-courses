@@ -29,7 +29,7 @@ export const ConfigDrawer: React.FC<ConfigDrawerProps> = ({ isOpen, onClose }) =
     setTimeout(() => setSavedSuccess(false), 2500);
   };
 
-  const codeSnippet = `// Snippet di invio specificato nel template EmailJS
+  const codeSnippet = `// Snippet di invio con routing dinamico EmailJS
 emailjs.send(
   "${EMAILJS_ROUTING_CONFIG.serviceId}",
   "${EMAILJS_ROUTING_CONFIG.templateId}",
@@ -39,7 +39,9 @@ emailjs.send(
     surname: formData.surname,
     city: formData.city,
     mail: formData.mail,
-    telephone: formData.telephone
+    telephone: formData.telephone,
+    recipient: recipientRegionalEmail, // Regione destinataria
+    coordinator: adminEmail // Mail dell'amministratore
   },
   publicKey
 );`;
