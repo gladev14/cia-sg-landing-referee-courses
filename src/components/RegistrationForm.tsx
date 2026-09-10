@@ -559,25 +559,6 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                 </div>
               </div>
 
-              {/* Note / Domande opzionali */}
-              <div>
-                <label
-                  htmlFor="field-notes"
-                  className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5"
-                >
-                  Note o domande particolari <span className="text-slate-500 font-normal">(opzionale)</span>
-                </label>
-                <textarea
-                  id="field-notes"
-                  name="notes"
-                  rows={2}
-                  value={formData.notes}
-                  onChange={handleInputChange}
-                  placeholder="Es. Hai già praticato basket o altri sport? Preferenze per giorni di lezioni serali o weekend?"
-                  className="w-full rounded-xl border border-slate-800 bg-slate-950/80 p-3 text-sm text-white placeholder-slate-500 focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/20 transition-all"
-                />
-              </div>
-
               {/* Checkbox Privacy Policy */}
               <div className="rounded-xl border border-slate-800 bg-slate-950/50 p-4">
                 <div className="flex items-start gap-3">
@@ -637,17 +618,6 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                     </>
                   )}
                 </button>
-              </div>
-
-              {/* Live recipient summary footer */}
-              <div className="flex flex-wrap items-center justify-between text-[11px] text-slate-400 pt-2 border-t border-slate-800/80">
-                <span className="flex items-center gap-1">
-                  <ShieldCheck className="h-3.5 w-3.5 text-emerald-400" />
-                  Routing regionale automatico certificato
-                </span>
-                <span className="text-slate-500">
-                  Notifica diretta al Comitato Regionale CIA di competenza
-                </span>
               </div>
             </form>
           )}

@@ -19,12 +19,12 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onCtaClick }) => {
       icon: Users,
       title: 'Frequenta le Lezioni Gratuite',
       description:
-        'Circa 2 mesi con lezioni serali tenute da formatori FIP: regolamento tecnico della pallacanestro, meccanica dei 2/3 arbitri e analisi video delle azioni.',
+        'Circa 8 lezioni della durata media di 2h ciascuna tenute da formatori FIP: regolamento tecnico della pallacanestro, meccanica dei 2/3 arbitri e analisi video delle azioni.',
     },
     {
       number: '03',
       icon: Trophy,
-      title: 'Esame e Primo Salto a Due',
+      title: 'Esame e Prima Palla a Due',
       description:
         'Supera il test a risposta multipla, ricevi gratuitamente la divisa ufficiale CIA e scendi sul parquet con un tutor esperto al tuo fianco!',
     },

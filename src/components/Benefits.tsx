@@ -7,7 +7,7 @@ export const Benefits: React.FC = () => {
       icon: Ticket,
       title: 'Tessera Federale Gratuita',
       description:
-        'Con la tessera ufficiale FIP hai diritto all\'ingresso gratuito in tutti i palasport e palazzetti d\'Italia per le partite di Serie A, Serie A2, Serie B e campionati nazionali.',
+        'Con la tessera ufficiale FIP hai diritto alla richiesta di accesso nei palasport e palazzetti d\'Italia per le partite dei campionati nazionali, subordinato all\'effettiva disponibilità di accrediti rilasciati dalla squadra di casa.',
       badge: 'Accesso Palasport',
     },
     {
@@ -21,7 +21,7 @@ export const Benefits: React.FC = () => {
       icon: Award,
       title: 'Divisa & Materiale Ufficiale',
       description:
-        'Al termine del corso ricevi gratuitamente la divisa ufficiale di gara CIA, il fischietto regolamentare e il manuale delle regole tecniche FIP.',
+        'Al termine del corso ricevi gratuitamente la divisa ufficiale di gara CIA e il fischietto regolamentare.',
       badge: 'Kit Incluso',
     },
     {

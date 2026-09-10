@@ -43,7 +43,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                 <Ticket className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
                 <div>
                   <h2 className="text-xs sm:text-sm font-bold text-white">Tessera FIP</h2>
-                  <p className="text-[11px] text-slate-400">Ingresso gratuito in tutti i palasport d'Italia</p>
+                  <p className="text-[11px] text-slate-400">Ingresso palasport (in base agli accrediti della squadra di casa)</p>
                 </div>
               </div>
 
@@ -59,7 +59,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                 <Award className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
                 <div>
                   <h2 className="text-xs sm:text-sm font-bold text-white">Divisa Ufficiale</h2>
-                  <p className="text-[11px] text-slate-400">Kit CIA, fischietto e regolamento inclusi</p>
+                  <p className="text-[11px] text-slate-400">Kit CIA e fischietto inclusi</p>
                 </div>
               </div>
 
@@ -126,7 +126,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                 <div className="rounded-xl bg-slate-950 border border-slate-800/80 p-4">
                   <div className="flex items-center justify-between text-xs text-slate-400 mb-1">
                     <span>Durata percorso</span>
-                    <span className="font-semibold text-slate-200">~ 2 Mesi (lezioni teorico-pratiche)</span>
+                    <span className="font-semibold text-slate-200">Circa 8 lezioni (media 2h ciascuna)</span>
                   </div>
                   <div className="flex items-center justify-between text-xs text-slate-400 mb-1">
                     <span>Età di accesso</span>
@@ -134,7 +134,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                   </div>
                   <div className="flex items-center justify-between text-xs text-slate-400">
                     <span>Certificato richiesto</span>
-                    <span className="font-semibold text-slate-200">Idoneità sportiva agonistica</span>
+                    <span className="font-semibold text-slate-200">Per arbitro di pallacanestro</span>
                   </div>
                 </div>
 
@@ -156,7 +156,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                     <div className="space-y-1">
                       <h3 className="text-sm font-bold text-white">Kit Ufficiale Arbitro FIP</h3>
                       <p className="text-xs text-slate-300">
-                        Fornito gratuitamente al superamento del corso: divisa tecnica, fischietto e regolamento.
+                        Fornito gratuitamente al superamento del corso: divisa tecnica e fischietto regolamentare.
                       </p>
                     </div>
                   </div>

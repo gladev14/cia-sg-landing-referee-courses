@@ -7,27 +7,23 @@ export const FaqSection: React.FC = () => {
   const faqs = [
     {
       q: 'Quali sono i requisiti di età per iscriversi?',
-      a: 'Possono iscriversi ragazze e ragazzi dai 13 anni compiuti in su. È richiesto essere residenti o domiciliati in Italia e presentare il certificato medico di idoneità all\'attività sportiva agonistica per la pallacanestro (rilasciabile da un medico dello sport).',
+      a: 'Possono iscriversi ragazze e ragazzi dai 13 anni compiuti in su. È richiesto essere residenti o domiciliati in Italia e presentare il certificato medico di idoneità per arbitro di pallacanestro (rilasciabile da un medico dello sport).',
     },
     {
       q: 'Il corso arbitri di basket è davvero gratuito?',
-      a: 'Sì, la partecipazione al corso organizzato dal CIA (Comitato Italiano Arbitri) per la FIP è al 100% gratuita. Al termine del percorso e al superamento dell\'esame finale, la federazione fornisce la divisa ufficiale di gara, il fischietto regolamentare e le regole tecniche.',
+      a: 'Sì, la partecipazione al corso organizzato dal CIA (Comitato Italiano Arbitri) per la FIP è al 100% gratuita. Al termine del percorso e al superamento dell\'esame finale, la federazione fornisce la divisa ufficiale di gara e il fischietto regolamentare.',
     },
     {
       q: 'Come sono organizzate le lezioni del corso?',
-      a: 'I corsi si svolgono generalmente con 1 o 2 lezioni settimanali in orario tardo-pomeridiano o serale (tra le 18:30 e le 20:30), combinando lezioni teoriche sulle regole del gioco ed esercitazioni pratiche di meccanica arbitrale direttamente sul parquet del palasport.',
+      a: 'Il corso è strutturato in circa 8 lezioni della durata media di 2h ciascuna (solitamente 1 o 2 incontri a settimana in orario serale o tardo-pomeridiano), combinando lezioni teoriche sulle regole del gioco ed esercitazioni pratiche sul parquet.',
     },
     {
-      q: 'Come funziona il rimborso spese per ciascuna partita?',
-      a: 'Per ogni partita diretta sul parquet (fin dalle categorie giovanili Under 13, Under 14, ecc.) è previsto un rimborso economico chilometrico e una diaria federale FIP, accreditati periodicamente secondo le tabelle ufficiali.',
-    },
-    {
-      q: 'Come funziona l\'ingresso gratuito nei palasport?',
-      a: 'A tutti gli arbitri effettivi viene rilasciata la Tessera Federale FIP, che consente l\'accesso gratuito nei palazzetti dello sport e palasport di tutta Italia per assistere alle partite dei campionati nazionali di Serie A, Serie A2, Serie B e giovanili.',
+      q: 'Come funziona l\'accesso nei palasport con la tessera federale?',
+      a: 'A tutti gli arbitri effettivi viene rilasciata la Tessera Federale FIP per accedere nei palazzetti dello sport d\'Italia per assistere alle partite dei campionati nazionali (Serie A, Serie A2, Serie B e giovanili), ma l\'ingresso dipende dall\'effettiva disponibilità di accrediti rilasciati dalla squadra di casa.',
     },
     {
       q: 'Cosa succede dopo aver inviato la richiesta di iscrizione?',
-      a: 'Il modulo inoltra automaticamente i tuoi dati al Comitato Regionale Arbitri (CIA) della regione selezionata. Il formatore o referente della commissione provinciale ti contatterà telefonicamente o via email per fornirti il calendario e accoglierti alla prima lezione.',
+      a: 'Il modulo inoltra la richiesta alla commissione di competenza. Il referente ti contatterà telefonicamente o via email per ulteriori informazioni.',
     },
   ];
 
