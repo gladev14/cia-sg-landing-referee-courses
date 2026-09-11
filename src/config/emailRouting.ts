@@ -53,7 +53,7 @@ export const BACKEND_API_CONFIG: BackendApiConfig = {
     'Campania': '',
     'Emilia-Romagna': '',
     'Friuli-Venezia Giulia': '',
-    'Lazio':  '',
+    'Lazio': 'zaramassimo.mz@gmail.com',
     'Liguria': '',
     'Lombardia': 'alessandro589@hotmail.com',
     'Marche':  '',
