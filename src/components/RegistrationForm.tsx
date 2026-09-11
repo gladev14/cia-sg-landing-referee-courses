@@ -215,33 +215,6 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                 </p>
               </div>
 
-              {/* Routing detail receipt */}
-              <div className="rounded-xl border border-slate-800 bg-slate-950/80 p-4 text-left text-xs sm:text-sm space-y-2.5 max-w-xl mx-auto">
-                <div className="font-semibold text-slate-200 border-b border-slate-800 pb-2 flex items-center justify-between">
-                  <span>Dettagli Routing Notifiche Regionali</span>
-                  <span className="text-[11px] text-emerald-400 font-semibold">Notifica Inviata</span>
-                </div>
-                <div className="flex justify-between text-slate-400">
-                  <span>Regione Destinataria (recipient):</span>
-                  <span className="font-mono text-slate-200">
-                    {submissionResult.details?.recipientRegional || 'In attesa di configurazione'}
-                  </span>
-                </div>
-                <div className="flex justify-between text-slate-400">
-                  <span>Mail Amministratore (coordinator):</span>
-                  <span className="font-mono text-slate-200">
-                    {submissionResult.details?.recipientAdmin || 'In attesa di configurazione'}
-                  </span>
-                </div>
-                <div className="flex justify-between text-slate-400">
-                  <span>In CC all'Utente Richiedente:</span>
-                  <span className="font-mono text-emerald-400">{formData.mail}</span>
-                </div>
-                <div className="pt-2 border-t border-slate-800/80 text-[11px] text-slate-400">
-                  Endpoint backend: <code className="text-emerald-400 bg-slate-900 px-1 py-0.5 rounded font-mono">POST /api/sendCourseInfoRequest</code>
-                </div>
-              </div>
-
               {/* Status note */}
               {submissionResult.isSimulated && (
                 <div className="rounded-xl border border-emerald-500/30 bg-emerald-950/20 p-4 text-left text-xs text-emerald-200/90 space-y-1.5 max-w-xl mx-auto">
