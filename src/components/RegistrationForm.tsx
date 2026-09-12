@@ -455,16 +455,9 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                 <div>
                   <label
                     htmlFor="field-city"
-                    className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5 flex items-center justify-between"
+                    className="block text-xs font-bold uppercase tracking-wider text-slate-300 mb-1.5"
                   >
-                    <span>
-                      Provincia di Riferimento <span className="text-emerald-400">*</span>
-                    </span>
-                    {formData.region && (
-                      <span className="text-[10px] text-slate-400 font-normal">
-                        ({availableProvinces.length} province in {formData.region})
-                      </span>
-                    )}
+                    Provincia di Riferimento <span className="text-emerald-400">*</span>
                   </label>
 
                   <div className="relative">
@@ -492,8 +485,8 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                           : 'Prima seleziona una regione'}
                       </option>
                       {availableProvinces.map((p) => (
-                        <option key={p.code} value={`${p.name} (${p.code})`} className="bg-slate-900 text-white">
-                          {p.name} ({p.code})
+                        <option key={p.code} value={p.name} className="bg-slate-900 text-white">
+                          {p.name}
                         </option>
                       ))}
                     </select>
