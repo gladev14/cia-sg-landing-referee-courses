@@ -40,9 +40,9 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
               1. Titolare del Trattamento
             </h4>
             <p>
-              I dati personali inseriti nel form di registrazione (nome, cognome, email, recapito telefonico,
-              regione e provincia di riferimento) sono trattati dal Comitato Italiano Arbitri (CIA - FIP) competente per territorio e
-              dall'Amministrazione Centrale per la gestione delle manifestazioni di interesse ai corsi per arbitri di basket.
+              I dati personali inseriti nel modulo di registrazione (nome, cognome, email, recapito telefonico,
+              regione e provincia di riferimento) sono trattati dal CIA competente per territorio affinché il candidato
+              possa essere ricontattato dal Formatore di riferimento per la gestione delle manifestazioni di interesse ai corsi arbitri.
             </p>
           </section>
 
@@ -50,18 +50,18 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
             <h4 className="font-bold text-white text-sm">2. Finalità e Base Giuridica</h4>
             <p>
               I dati raccolti vengono trattati esclusivamente per ricontattare l'utente via email o telefono,
-              fornire chiarimenti sul corso arbitri, comunicare il calendario delle lezioni della sezione di
-              competenza e procedere con l'iscrizione preliminare. Il trattamento è fondato sul consenso esplicito
+              fornire chiarimenti sul corso arbitri, comunicare il calendario delle lezioni da parte del CIA di
+              competenza e procedere con l'iscrizione. Il trattamento è fondato sul consenso esplicito
               espresso tramite il modulo online.
             </p>
           </section>
 
           <section className="space-y-1.5">
-            <h4 className="font-bold text-white text-sm">3. Destinatari dei Dati e Routing Email</h4>
+            <h4 className="font-bold text-white text-sm">3. Destinatari dei Dati e Inoltro Automatico</h4>
             <p>
-              In ottemperanza alla logica di routing territoriale, i dati vengono trasmessi in forma protetta
-              al Comitato Regionale di residenza dell'utente selezionato (es. CIA della regione) e all'Amministratore
-              Centrale via servizio di posta, con contestuale invio di una ricevuta in copia (CC) all'interessato.
+              In ottemperanza alla logica territoriale, i dati vengono trasmessi in forma protetta
+              al CIA della regione selezionata dall'utente affinché possa essere contattato dal Formatore di riferimento,
+              con contestuale invio di una ricevuta in copia (CC) all'interessato.
               I dati non vengono ceduti a terze parti commerciali né utilizzati a scopi pubblicitari.
             </p>
           </section>
@@ -71,27 +71,43 @@ export const PrivacyModal: React.FC<PrivacyModalProps> = ({ isOpen, onClose }) =
             <p>
               I dati saranno conservati per il tempo strettamente necessario all'espletamento del corso e alla
               gestione della candidatura, e comunque non oltre il termine della stagione sportiva di riferimento,
-              salvo perfezionamento del tesseramento federale.
+              salvo perfezionamento del tesseramento.
             </p>
           </section>
 
           <section className="space-y-1.5">
-            <h4 className="font-bold text-white text-sm">5. Diritti dell'Interessato</h4>
+            <h4 className="font-bold text-white text-sm">5. Diritti dell'Interessato e Policy Ufficiale</h4>
             <p>
               Ai sensi degli artt. 15-22 del GDPR, l'utente ha diritto di richiedere l'accesso, la rettifica, la
-              cancellazione dei propri dati o la revoca del consenso in qualunque momento contattando
-              l'indirizzo dell'amministrazione centrale: <span className="text-emerald-400 font-mono">amministrazione@corsiarbitri.it</span>.
+              cancellazione dei propri dati o la revoca del consenso in qualunque momento.
+              Per consultare l'informativa completa ufficiale puoi visitare la pagina dedicata:{' '}
+              <a
+                href="https://fip.it/privacy-policy/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-emerald-400 underline font-semibold hover:text-emerald-300 inline-flex items-center gap-1"
+              >
+                Informativa Privacy Ufficiale FIP
+              </a>.
             </p>
           </section>
         </div>
 
         {/* Footer */}
-        <div className="mt-6 pt-4 border-t border-slate-800 flex justify-end">
+        <div className="mt-6 pt-4 border-t border-slate-800 flex items-center justify-between gap-3">
+          <a
+            href="https://fip.it/privacy-policy/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xs text-slate-400 hover:text-emerald-400 underline"
+          >
+            Apri fip.it/privacy-policy
+          </a>
           <button
             onClick={onClose}
             className="rounded-xl bg-emerald-500 px-5 py-2 text-xs font-bold text-slate-950 hover:bg-emerald-400 active:scale-95 transition-all cursor-pointer"
           >
-            Ho compreso e accetto
+            Ho compreso
           </button>
         </div>
       </div>

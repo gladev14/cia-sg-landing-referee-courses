@@ -1,5 +1,5 @@
 import React from 'react';
-import { Shield, Sparkles, Sliders, Menu, X } from 'lucide-react';
+import { Sparkles, Menu, X } from 'lucide-react';
 
 interface NavbarProps {
   onOpenConfig?: () => void;
@@ -22,18 +22,18 @@ export const Navbar: React.FC<NavbarProps> = ({ onScrollToForm }) => {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand Logo */}
         <div className="flex items-center gap-3">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 text-slate-950 shadow-lg shadow-emerald-500/20 ring-1 ring-emerald-400/40">
-            <Shield className="h-5 w-5 text-slate-950 stroke-[2.5]" />
+          <div className="flex h-11 w-10 shrink-0 items-center justify-center">
+            <img
+              src="/fip-logo.svg"
+              alt="Logo FIP - Federazione Italiana Pallacanestro"
+              className="h-10 w-auto object-contain drop-shadow-[0_2px_10px_rgba(255,255,255,0.18)]"
+              referrerPolicy="no-referrer"
+            />
           </div>
           <div>
-            <div className="flex items-center gap-1.5">
-              <span className="text-base font-extrabold tracking-tight text-white sm:text-lg">
-                CORSI ARBITRI BASKET
-              </span>
-              <span className="rounded bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-emerald-400 border border-emerald-500/30">
-                FIP - CIA
-              </span>
-            </div>
+            <span className="text-base font-extrabold tracking-tight text-white sm:text-lg block">
+              CORSI ARBITRI BASKET
+            </span>
             <p className="text-[11px] text-slate-400">Diventa arbitro ufficiale di pallacanestro nella tua regione</p>
           </div>
         </div>

@@ -11,7 +11,6 @@ import {
   AlertCircle,
   Loader2,
   ExternalLink,
-  ShieldCheck,
   RefreshCw,
   Info,
 } from 'lucide-react';
@@ -185,15 +184,11 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
         <div className="rounded-3xl border border-slate-800 bg-slate-900/95 p-6 sm:p-10 lg:p-12 shadow-2xl shadow-emerald-950/20 backdrop-blur-xl">
           {/* Header */}
           <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-10">
-            <div className="inline-flex items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1 text-xs font-semibold text-emerald-400 mb-3">
-              <ShieldCheck className="h-3.5 w-3.5" />
-              <span>Modulo Ufficiale di Adesione</span>
-            </div>
             <h2 className="text-2xl sm:text-4xl font-extrabold text-white tracking-tight">
               Richiedi Info o Iscriviti al Corso
             </h2>
             <p className="mt-2 text-sm sm:text-base text-slate-400">
-              Compila i campi sottostanti. La richiesta verrà inoltrata direttamente alla sezione
+              Compila i campi sottostanti. La richiesta verrà inoltrata direttamente al CIA
               della tua regione e riceverai una copia via email.
             </p>
           </div>
@@ -223,7 +218,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                     <span>Conferma Presa in Carico:</span>
                   </div>
                   <p>
-                    I tuoi dati sono stati registrati e instradati correttamente alla commissione arbitrale regionale CIA competente per territorio. Riceverai a breve una risposta via email o recapito telefonico.
+                    I tuoi dati sono stati registrati e inoltrati correttamente al CIA della tua regione affinché tu possa essere contattato dal Formatore di riferimento. Riceverai a breve una risposta via email o recapito telefonico.
                   </p>
                 </div>
               )}
@@ -516,7 +511,7 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                     </p>
                   ) : (
                     <p className="mt-1 text-[11px] text-slate-400">
-                      Verrà assegnata la sezione arbitrale più comoda per le lezioni e i campi di allenamento.
+                      La richiesta verrà gestita dal CIA di competenza per le lezioni e le attività formative.
                     </p>
                   )}
 
@@ -546,18 +541,19 @@ export const RegistrationForm: React.FC<RegistrationFormProps> = ({
                     <label htmlFor="field-privacyConsent" className="cursor-pointer">
                       Dichiaro di aver letto e accetto l'{' '}
                     </label>
-                    <button
-                      type="button"
-                      onClick={onOpenPrivacy}
+                    <a
+                      href="https://fip.it/privacy-policy/"
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-emerald-400 underline font-semibold hover:text-emerald-300 inline-flex items-center gap-0.5 cursor-pointer"
                     >
-                      Informativa sulla Privacy (GDPR)
+                      informativa privacy
                       <ExternalLink className="h-3 w-3 inline" />
-                    </button>
+                    </a>
                     <span>
                       {' '}
                       e acconsento al trattamento dei miei dati personali al fine esclusivo di ricevere
-                      informazioni sul corso arbitri e comunicazioni da parte della sezione competente.
+                      informazioni sul corso arbitri e comunicazioni da parte del CIA competente.
                     </span>
                   </div>
                 </div>

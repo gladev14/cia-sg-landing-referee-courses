@@ -12,21 +12,21 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onCtaClick }) => {
       icon: ClipboardList,
       title: 'Compila il Modulo Online',
       description:
-        'Inserisci i tuoi dati, la tua regione e la tua provincia di riferimento. La richiesta viene instradata automaticamente alla commissione provinciale CIA di competenza.',
+        'Inserisci i tuoi dati, la tua regione e la tua provincia di riferimento. La richiesta viene inoltrata automaticamente al CIA della tua regione affinché tu possa essere contattato dal Formatore di riferimento.',
     },
     {
       number: '02',
       icon: Users,
       title: 'Frequenta le Lezioni Gratuite',
       description:
-        'Circa 8 lezioni della durata media di 2h ciascuna tenute da formatori FIP: regolamento tecnico della pallacanestro, meccanica dei 2/3 arbitri e analisi video delle azioni.',
+        'Circa 8 lezioni della durata media di 2h ciascuna tenute dai Formatori qualificati.',
     },
     {
       number: '03',
       icon: Trophy,
       title: 'Esame e Prima Palla a Due',
       description:
-        'Supera il test a risposta multipla, ricevi gratuitamente la divisa ufficiale CIA e scendi sul parquet con un tutor esperto al tuo fianco!',
+        'Supera il test, ricevi la divisa ufficiale e scendi sul parquet con un collega esperto al tuo fianco!',
     },
   ];
 
@@ -65,10 +65,6 @@ export const HowItWorks: React.FC<HowItWorksProps> = ({ onCtaClick }) => {
 
                   <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
                   <p className="text-sm text-slate-400 leading-relaxed">{step.description}</p>
-                </div>
-
-                <div className="mt-6 pt-4 border-t border-slate-800/80 text-xs font-medium text-emerald-400/90 flex items-center gap-1.5">
-                  <span>Passo {idx + 1} di 3</span>
                 </div>
               </div>
             );

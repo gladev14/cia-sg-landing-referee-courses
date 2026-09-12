@@ -5,23 +5,23 @@ export const Benefits: React.FC = () => {
   const benefitsList = [
     {
       icon: Ticket,
-      title: 'Tessera Federale Gratuita',
+      title: 'Tessera per accesso ai palazzetti',
       description:
-        'Con la tessera ufficiale FIP hai diritto alla richiesta di accesso nei palasport e palazzetti d\'Italia per le partite dei campionati nazionali, subordinato all\'effettiva disponibilità di accrediti rilasciati dalla squadra di casa.',
+        'Con la tessera ufficiale hai diritto alla richiesta di accesso nei palasport e palazzetti d\'Italia per le partite dei campionati nazionali, subordinato all\'effettiva disponibilità di accrediti rilasciati dalla squadra di casa.',
       badge: 'Accesso Palasport',
     },
     {
       icon: Coins,
-      title: 'Rimborso Spese per Gara',
+      title: 'Rimborso per ogni gara arbitrata',
       description:
-        'Per ogni partita diretta sul parquet percepisci un rimborso economico chilometrico e una diaria federale stabilita dalle tabelle ufficiali FIP.',
-      badge: 'Compenso Gara',
+        'Per ogni partita diretta sul parquet percepisci un rimborso economico chilometrico e una diaria federale stabilita dalle tabelle ufficiali.',
+      badge: 'Rimborso Gara',
     },
     {
       icon: Award,
-      title: 'Divisa & Materiale Ufficiale',
+      title: 'Divisa Ufficiale e Fischietto',
       description:
-        'Al termine del corso ricevi gratuitamente la divisa ufficiale di gara CIA e il fischietto regolamentare.',
+        'Al termine del corso ricevi gratuitamente la divisa ufficiale di gara e il fischietto regolamentare per iniziare subito a dirigere.',
       badge: 'Kit Incluso',
     },
     {
@@ -41,7 +41,7 @@ export const Benefits: React.FC = () => {
             Perché Diventare Arbitro di Basket
           </span>
           <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-            I Vantaggi Esclusivi del Corso FIP - CIA
+            I Vantaggi Esclusivi del Corso Arbitri
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-400">
             Non è solo un hobby sportivo: è una scuola di vita che sviluppa leadership, prontezza

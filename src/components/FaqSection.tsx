@@ -7,23 +7,23 @@ export const FaqSection: React.FC = () => {
   const faqs = [
     {
       q: 'Quali sono i requisiti di età per iscriversi?',
-      a: 'Possono iscriversi ragazze e ragazzi dai 13 anni compiuti in su. È richiesto essere residenti o domiciliati in Italia e presentare il certificato medico di idoneità per arbitro di pallacanestro (rilasciabile da un medico dello sport).',
+      a: 'Possono iscriversi ragazze e ragazzi dai 13 anni compiuti in su. È richiesto essere residenti o domiciliati in Italia e presentare il certificato medico agonistico per arbitro di pallacanestro (rilasciabile da un medico dello sport).',
     },
     {
       q: 'Il corso arbitri di basket è davvero gratuito?',
-      a: 'Sì, la partecipazione al corso organizzato dal CIA (Comitato Italiano Arbitri) per la FIP è al 100% gratuita. Al termine del percorso e al superamento dell\'esame finale, la federazione fornisce la divisa ufficiale di gara e il fischietto regolamentare.',
+      a: 'Sì, la partecipazione al corso organizzato dal CIA (Comitato Italiano Arbitri) è al 100% gratuita. Al termine del percorso e al superamento dell\'esame finale, viene fornita la divisa ufficiale di gara e il fischietto regolamentare.',
     },
     {
       q: 'Come sono organizzate le lezioni del corso?',
       a: 'Il corso è strutturato in circa 8 lezioni della durata media di 2h ciascuna (solitamente 1 o 2 incontri a settimana in orario serale o tardo-pomeridiano), combinando lezioni teoriche sulle regole del gioco ed esercitazioni pratiche sul parquet.',
     },
     {
-      q: 'Come funziona l\'accesso nei palasport con la tessera federale?',
-      a: 'A tutti gli arbitri effettivi viene rilasciata la Tessera Federale FIP per accedere nei palazzetti dello sport d\'Italia per assistere alle partite dei campionati nazionali (Serie A, Serie A2, Serie B e giovanili), ma l\'ingresso dipende dall\'effettiva disponibilità di accrediti rilasciati dalla squadra di casa.',
+      q: 'Come funziona l\'accesso nei palasport con la tessera per accesso ai palazzetti?',
+      a: 'A tutti gli arbitri effettivi viene rilasciata la tessera per accesso ai palazzetti d\'Italia per assistere alle partite dei campionati nazionali (Serie A, Serie A2, Serie B e giovanili), subordinato all\'effettiva disponibilità di accrediti rilasciati dalla squadra di casa.',
     },
     {
       q: 'Cosa succede dopo aver inviato la richiesta di iscrizione?',
-      a: 'Il modulo inoltra la richiesta alla commissione di competenza. Il referente ti contatterà telefonicamente o via email per ulteriori informazioni.',
+      a: 'La tua richiesta viene inoltrata automaticamente al CIA della tua regione affinché possa essere contattato dal Formatore di riferimento, che ti fornirà tutti i dettagli su orari, sede del corso e calendario delle lezioni.',
     },
   ];
 

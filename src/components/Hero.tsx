@@ -26,15 +26,15 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
             </div>
 
             <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.15]">
-              Fischietto, passione e rispetto.{' '}
-              <span className="bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
+              Fischietto, passione e rispetto.
+              <span className="block mt-2 sm:mt-3 bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 bg-clip-text text-transparent">
                 Diventa Arbitro di Basket.
               </span>
             </h1>
 
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
               Il corso è <strong>completamente gratuito</strong> ed è aperto a ragazze e ragazzi dai <strong>13 anni compiuti</strong> in su.
-              Impara il regolamento della pallacanestro, allena la leadership e scendi sul parquet da protagonista con la Federazione Italiana Pallacanestro (FIP).
+              Impara il regolamento della pallacanestro, allena la leadership e scendi sul parquet da protagonista.
             </p>
 
             {/* Benefit Highlights */}
@@ -42,7 +42,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
               <div className="flex items-start gap-2.5 rounded-xl border border-slate-800 bg-slate-900/60 p-3">
                 <Ticket className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
                 <div>
-                  <h2 className="text-xs sm:text-sm font-bold text-white">Tessera FIP</h2>
+                  <h2 className="text-xs sm:text-sm font-bold text-white">Tessera per accesso ai palazzetti</h2>
                   <p className="text-[11px] text-slate-400">Ingresso palasport (in base agli accrediti della squadra di casa)</p>
                 </div>
               </div>
@@ -51,7 +51,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                 <Coins className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
                 <div>
                   <h2 className="text-xs sm:text-sm font-bold text-white">Rimborso Spese</h2>
-                  <p className="text-[11px] text-slate-400">Compenso economico e diaria per ogni gara</p>
+                  <p className="text-[11px] text-slate-400">Rimborso per ogni gara arbitrata</p>
                 </div>
               </div>
 
@@ -59,7 +59,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                 <Award className="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" />
                 <div>
                   <h2 className="text-xs sm:text-sm font-bold text-white">Divisa Ufficiale</h2>
-                  <p className="text-[11px] text-slate-400">Kit CIA e fischietto inclusi</p>
+                  <p className="text-[11px] text-slate-400">Divisa ufficiale e fischietto inclusi gratuitamente</p>
                 </div>
               </div>
 
@@ -134,7 +134,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                   </div>
                   <div className="flex items-center justify-between text-xs text-slate-400">
                     <span>Certificato richiesto</span>
-                    <span className="font-semibold text-slate-200">Per arbitro di pallacanestro</span>
+                    <span className="font-semibold text-slate-200">Agonistico per arbitro di pallacanestro</span>
                   </div>
                 </div>
 
@@ -154,7 +154,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                     </div>
 
                     <div className="space-y-1">
-                      <h3 className="text-sm font-bold text-white">Kit Ufficiale Arbitro FIP</h3>
+                      <h3 className="text-sm font-bold text-white">Kit Ufficiale Arbitro</h3>
                       <p className="text-xs text-slate-300">
                         Fornito gratuitamente al superamento del corso: divisa tecnica e fischietto regolamentare.
                       </p>
@@ -166,7 +166,7 @@ export const Hero: React.FC<HeroProps> = ({ onCtaClick }) => {
                 <div className="rounded-lg bg-emerald-950/40 border border-emerald-800/40 p-3 text-xs text-emerald-300/90 flex items-start gap-2.5">
                   <span className="text-base">📍</span>
                   <p>
-                    La tua richiesta viene inoltrata automaticamente al <strong>Comitato Regionale Arbitri (CIA)</strong> per assegnarti la commissione provinciale più vicina.
+                    La tua richiesta viene inoltrata automaticamente al <strong>CIA della tua regione</strong> affinché possa essere contattato dal Formatore di riferimento.
                   </p>
                 </div>
               </div>

@@ -1,6 +1,6 @@
 {
   "name": "Corsi Arbitri - Diventa Arbitro",
-  "description": "Landing page per richiedere informazioni e iscriversi ai corsi arbitri di basket in Italia (FIP - CIA), con routing regionale automatico delle adesioni.",
+  "description": "Landing page per richiedere informazioni e iscriversi ai corsi arbitri di pallacanestro in Italia, con inoltro regionale automatico delle adesioni al CIA.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
